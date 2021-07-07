@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import www.dream.com.party.model.ContactPoint;
 import www.dream.com.party.model.Member;
+import www.dream.com.party.model.Party;
 import www.dream.com.party.service.PartyService;
 
 @Controller
@@ -35,17 +37,29 @@ public class PartyController implements AuthenticationSuccessHandler, AccessDeni
 	
 	
 	
-	@GetMapping(value="membership")
-	public void membership() {
-		
+//	@GetMapping(value="membership")
+//	public void membership() {
+//		
+//	}
+//	
+//	@PostMapping( value="membership")
+//	public String membership(Member member) {
+//		
+//		partyService.membershipForUser(member);
+//		return null;
+//	}
+//	
+	@GetMapping(value = "membership")
+	public void partyRegister(){
 	}
 	
-	@PostMapping( value="membership")
-	public String membership(Member member) {
-		
-		partyService.membershipForUser(member);
+	//, List<ContactPoint> contactPoint
+	@PostMapping(value="membership")
+	public String partyRegister(Member party, List<ContactPoint> contactPoint){
+		partyService.partyRegister(party, contactPoint);
 		return null;
 	}
+	
 	
 	@GetMapping("customLogin")
 	public void loginInput(String error, String logout, Model model) {

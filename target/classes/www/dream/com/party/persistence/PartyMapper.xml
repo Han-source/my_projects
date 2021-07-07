@@ -74,15 +74,17 @@
    ]]>
 	</select>
 
-	<!--  public Party joinMembership(Party party); -->
-	<insert id="joinMembership">
-      insert
-    into f_party(user_id, user_pwd, name, birth_date, sex, email, phone_num )
-           values(#{userId}, #{userPwd}, #{name}, #{birthDate}, #{male}, #{email} , #{phoneNum})
-    
- 
-   </insert>
-   
+
+	 <insert id="partyRegister">
+		insert all 
+		    into f_party(user_id, user_pwd, name, birth_dt, sex)
+				values (#{party.userId}, #{party.userPwd}, #{party.name}, #{party.birthDate}, #{party.male})
+		   <foreach collection="contactPoint" item="cp" >
+			into f_contact_point(user_id, contact_point_type, info)
+				values (#{party.userId}, #{cp.contactPointType} , #{cp.info})
+	       </foreach>
+				select * from dual
+	</insert>   
    
 	
 	<!-- 	public void setPwd(Party p); -->

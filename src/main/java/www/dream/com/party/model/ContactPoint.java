@@ -12,9 +12,14 @@ import www.dream.com.framework.langPosAnalyzer.HashTarget;
 @Data
 public class ContactPoint extends CommonMngVO {
 
-	private String contactPointType; //연락처 종류
-	   @HashTarget
-	   private String info;   //연락처 정보
+	private String contactPointType; // 연락처 종류
+	@HashTarget
+	private String info; // 연락처 정보
 
-   
+	public ContactPoint(String contactPointType, String info) {
+		this.contactPointType = contactPointType;
+		this.info = info;
+	}
+
+	
 }

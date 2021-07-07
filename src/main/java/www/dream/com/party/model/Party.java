@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import www.dream.com.common.model.CommonMngVO;
@@ -30,8 +31,6 @@ public abstract  class Party extends CommonMngVO implements IHashTagOpponent{
 	private boolean male;
 	private String email;
 	private boolean enabled; // 가입여부중 가입은 true 탈퇴는 false
-	private String address;
-	private int phoneNum;
 
 
 	// 1:N 관계에 대한 속성
@@ -60,5 +59,6 @@ public abstract  class Party extends CommonMngVO implements IHashTagOpponent{
 				+ ", isMale=" + male + ", enabled=" + enabled + ", listContactPoint=" + listContactPoint
 				+ ", toString=" + super.toString() + "]";
 	}
+
 
 }

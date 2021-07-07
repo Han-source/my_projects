@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import www.dream.com.framework.springSecurityAdapter.CustomUser;
+import www.dream.com.party.model.ContactPoint;
 import www.dream.com.party.model.Party;
-import www.dream.com.party.model.Party1;
 import www.dream.com.party.persistence.PartyMapper;
 
 @Service
@@ -32,11 +32,14 @@ public class PartyService implements UserDetailsService{
 	}
 	
 	
-	
-	public void membershipForUser(Party party) {
-
-		partyMapper.joinMembership(party);
-		
-		
+	public void partyRegister(Party party, List<ContactPoint> contactPoint) {
+		partyMapper.partyRegister(party, contactPoint);
 	}
+	
+//	public void membershipForUser(Party party) {
+//
+//		partyMapper.joinMembership(party);
+//		
+//		
+//	}
 }

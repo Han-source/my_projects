@@ -35,34 +35,24 @@
 	<input id="birthDt" type="date" class="form-control" name="birthDt"  >
 </div>
 
-<div class="form-group">
-	<label>휴대폰 번호</label>
-	<input id="PNum" type="tel" class="form-control" name="PNum"  >
-</div>
 
 <div class="form-group">
 	<label>성별</label>
-	<input id="sex1" type="radio" class="form-control" name="sex"  >
+	<input id="sex1" type="radio" class="form-control" name="male"  >
 </div>
 
 
 <div class="form-group">
+	<label>휴대폰 번호</label>
+	<input id="PNum" type="tel" class="form-control" name="contactPointType" value="mobilePhone" >
+</div>
+<div class="form-group">
 	<label>이메일 주소</label>
-	<input id="Uemail" type="email" class="form-control" name="Uemdail"  >
+	<input id="addr" type="addr" class="form-control" name="contactPointType" value="addr">
 </div>
 
 
-
-
-<!-- id값으로 content를 그대로 사용하는것은 위험 -->
-
-
-
-
-
-
 <input type='hidden' name='${_csrf.parameterName}' value='${_csrf.token}'>
-
 
 			<button id="btnRegisterPost" type="submit" class="btn-primary">회원 등록</button>
 		</form>

@@ -21,10 +21,10 @@ public class TestPosAnalyzer {
 		writer.setName("홍길동");
 		post.setWriter(writer);
 		
-		ContactPoint cp = new ContactPoint();
+		ContactPoint cp = new ContactPoint("z","z");
 		cp.setInfo("사자 고양이 코끼리");
 		writer.addContactPoint(cp);
-		cp = new ContactPoint();
+		cp = new ContactPoint("z","z");
 		cp.setInfo("wltkd96@naver.com");
 		writer.addContactPoint(cp);
 		

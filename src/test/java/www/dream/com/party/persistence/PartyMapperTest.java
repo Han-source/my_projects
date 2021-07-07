@@ -2,6 +2,10 @@ package www.dream.com.party.persistence;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import www.dream.com.party.model.ContactPoint;
+import www.dream.com.party.model.Member;
 import www.dream.com.party.model.Party;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -49,6 +55,27 @@ public class PartyMapperTest {
 	}
 	
 	@Test
+	public void test200partyRegister() {
+		try {
+			Member m = new Member();
+			List<ContactPoint> cp = new ArrayList<>(); 
+			m.setUserId("aa");
+			m.setUserPwd("aa");
+			m.setName("a");
+			m.setBirthDate(new Date());
+			m.setMale(false);
+			cp.add(new ContactPoint("mobileNum", "010600"));
+			cp.add(new ContactPoint("addr", "1234"));
+
+			partyMapper.partyRegister(m, cp);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	//@Test
 	public void test440SetPwd() {
 		try {
 			partyMapper.getList().forEach(p -> {

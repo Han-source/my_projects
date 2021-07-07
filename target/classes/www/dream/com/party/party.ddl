@@ -36,7 +36,7 @@ create table f_party(
         enabled        char(1)   	      default 1,
         reg_dt         timestamp     	  default sysdate not null,   --등록시점
         upt_dt         timestamp          default sysdate not null,   --수정시점
-        descrim       	 varchar2(10)     	  ,
+        descrim       	 varchar2(10) 
  
       --Admin용 속성 정의함
       --Manager용 속성 정의함
@@ -71,6 +71,14 @@ create table f_contact_point (
    upt_dt         timestamp      default sysdate not null,   --수정시점
    primary key (user_id, contact_point_type),
    CONSTRAINT fk_cp_party FOREIGN KEY (user_id) REFERENCES s_party(user_id)
+);
+
+create table f_contact_point (
+   user_id         varchar2(10),
+   contact_point_type   char(10),
+   info            varchar2(50),-- 연락처 정보
+   reg_dt         timestamp      default sysdate not null,   --등록시점
+   upt_dt         timestamp      default sysdate not null,   --수정시점
 );
 
 admin...address 313호 2020.01.01 2025.01.01
